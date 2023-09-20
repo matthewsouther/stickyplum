@@ -1,0 +1,26 @@
+{
+  "name": "stickyplum.com",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && ts-node --esm ./src/build.ts && vite build",
+    "preview": "ts-node --esm ./src/build.ts && vite preview"
+  },
+  "dependencies": {
+    "@vaadin/router": "^1.7.5",
+    "lit": "^2.7.6"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.2",
+    "@types/node": "^20.6.2",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.1.1",
+    "marked": "^9.0.3",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}

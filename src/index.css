@@ -1,0 +1,47 @@
+:root {
+  --main-background-color: #e9ff33;
+  --color-1: #6c3483;
+  --color-2: #ae0099;
+  --color-3: #c40606;
+  --color-4: #07861c;
+  --header-1-font: "Neucha";
+  --header-2-font: "Trebuchet MS";
+  --header-3-font: "Arial Black";
+  --main-font: "Georgia";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: large;
+  background-color: var(--main-background-color);
+}
+
+#siteContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 1rem;
+}
+
+#outlet {
+  flex: 1 1 750px;
+}
+
+#leftMargin,
+#rightMargin {
+  flex: 0 4 5rem;
+}
+
+h1 {
+  font-family: var(--header-1-font);
+  font-size: 42px;
+}
+
+h2 {
+  font-family: var(--header-2-font);
+  font-size: 24px;
+  color: var(--color-1);
+}
