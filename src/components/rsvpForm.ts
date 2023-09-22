@@ -101,6 +101,7 @@ export class RsvpForm extends LitElement {
         <input
           name="numberOfAdults"
           type="number"
+          inputmode="numeric"
           min="1"
           max="10"
           required
@@ -112,6 +113,7 @@ export class RsvpForm extends LitElement {
         <input
           name="numberOfKids"
           type="number"
+          inputmode="numeric"
           min="0"
           max="10"
           @input="${this.handleInput}"
@@ -193,6 +195,7 @@ export class RsvpForm extends LitElement {
     textarea {
       display: block;
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
       padding: 0.5em;
       min-height: 3em;
       min-width: 10em;
