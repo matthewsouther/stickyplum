@@ -169,6 +169,15 @@ export class RsvpForm extends LitElement {
     div {
       max-width: 100%;
     }
+    /* Hide arrows on number input */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
     .hidden {
       display: none;
     }
@@ -183,7 +192,10 @@ export class RsvpForm extends LitElement {
     input:not([type="radio"]),
     textarea {
       display: block;
-      min-height: 2em;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0.5em;
+      min-height: 3em;
+      min-width: 10em;
       max-width: 100%;
       border: none;
       background-color: rgb(250, 250, 250, 0.3);
@@ -193,6 +205,9 @@ export class RsvpForm extends LitElement {
     }
     input[type="email"] {
       width: 20em;
+    }
+    input[type="radio"] {
+      transform: scale(1.5);
     }
     textarea {
       width: 30em;
