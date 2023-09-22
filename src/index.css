@@ -49,6 +49,10 @@ body {
   flex: 1 4 0.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
 h1 {
   font-family: var(--header-1-font);
   font-size: 42px;

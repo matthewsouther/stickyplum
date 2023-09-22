@@ -42,6 +42,13 @@ export class RsvpForm extends LitElement {
     }
   }
 
+  // Prevent non-numeric characters in number fields
+  handleNumberKeypress = (event: KeyboardEvent) => {
+    if (event.key.length === 1 && /\D/.test(event.key)) {
+      event.preventDefault();
+    }
+  };
+
   handleInput = (event: InputEvent) => {
     const target = event.target as HTMLFormElement;
     if (target) {
@@ -52,6 +59,23 @@ export class RsvpForm extends LitElement {
     console.log(this.data);
   };
 
+  handleSubmit = (event: SubmitEvent) => {
+    event.preventDefault();
+    const form = this.renderRoot.querySelector("form") as HTMLFormElement;
+    if (form) {
+      const formData = new FormData(form);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          window.location.href = `/rsvpComplete`;
+        })
+        .catch((error) => alert(error));
+    }
+  };
+
   renderForm = () => html`
     <form
       name="rsvp"
@@ -60,6 +84,7 @@ export class RsvpForm extends LitElement {
       netlify-honeypot="trapthebots"
       data-netlify-recaptcha="true"
     >
+      <input type="hidden" name="form-name" value="rsvp" />
       <div class="hidden">
         <label>Don't fill this out if you're human</label>
         <input name="trapthebots" />
@@ -105,6 +130,7 @@ export class RsvpForm extends LitElement {
           min="1"
           max="10"
           required
+          @keypress="${this.handleNumberKeypress}"
           @input="${this.handleInput}"
         />
       </div>
@@ -116,6 +142,7 @@ export class RsvpForm extends LitElement {
           inputmode="numeric"
           min="0"
           max="10"
+          @keypress="${this.handleNumberKeypress}"
           @input="${this.handleInput}"
         />
       </div>
@@ -144,7 +171,7 @@ export class RsvpForm extends LitElement {
       </div>
       <div data-netlify-recaptcha="true"></div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit" @submit="${this.handleSubmit}">Submit</button>
       </div>
     </form>
   `;
@@ -197,7 +224,6 @@ export class RsvpForm extends LitElement {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
       padding: 0.5em;
-      min-height: 3em;
       min-width: 10em;
       max-width: 100%;
       border: none;
