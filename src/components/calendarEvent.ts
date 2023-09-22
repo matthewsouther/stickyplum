@@ -41,6 +41,7 @@ export class CalendarEvent extends LitElement {
   static styles = css`
     h3 {
       font-family: var(--header-3-font);
+      font-weight: bold;
       color: var(--color-3);
     }
 

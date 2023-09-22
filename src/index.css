@@ -10,9 +10,9 @@
   --color-3: rgb(172, 50, 50);
   --color-4: rgb(42, 109, 53);
   --header-1-font: "Neucha";
-  --header-2-font: "Trebuchet MS";
-  --header-3-font: "Arial Black";
-  --main-font: "Georgia";
+  --header-2-font: "Nunito";
+  --header-3-font: "Oswald";
+  --main-font: "Lora";
 }
 
 * {
