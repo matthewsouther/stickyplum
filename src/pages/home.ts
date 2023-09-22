@@ -4,7 +4,7 @@ import { customElement } from "lit/decorators.js";
 @customElement("page-home")
 export class Home extends LitElement {
   render = () => html`
-    <div class="topImage">
+    <div class="topImageContainer">
       <img
         src="https://s3.us-west-2.amazonaws.com/stickyplum.com/sticky_plum_concert.jpg"
       />
@@ -14,23 +14,22 @@ export class Home extends LitElement {
       the Cully neighborhood of Portland, Oregon.
     </p>
     <p>
-      These family-friendly concerts are intended to get grown-ups and kids out
-      listening to good music. Kids are free to listen or play (with parent
-      supervision as needed).
+      Named for the small yellow fruit produced by the tree whose shade forms
+      our outdoor stage area, these family-friendly concerts are intended to get
+      people of all ages out listening to good music. Kids are free to listen or
+      play with parent supervision.
     </p>
     <p>
-      We believe kids should be exposed to lots of different musical styles,
-      parents should have an opportunity to see live music without hiring a
-      babysitter, and the community should have events where neighbors and
-      friends can come together around a shared love of music.
+      We believe kids should be exposed to great music of all kinds; parents
+      should be able to see live music without hiring a babysitter; and artists,
+      neighbors, and friends should have opportunities to come together, share,
+      and have fun.
     </p>
-    <p>
-      All are welcome (with or without kids). We look forward to seeing you!
-    </p>
+    <p>All are welcome, with or without kids. We look forward to seeing you!</p>
   `;
 
   static styles = css`
-    div.topImage {
+    .topImageContainer {
       margin-top: 3em;
     }
 

@@ -1,4 +1,5 @@
 export class Event {
+  id: string = "";
   title: string = "";
   date: string = "";
   html: string = "";
@@ -16,7 +17,6 @@ const load = async () => {
   if (data[EVENTS_JSON_FILE]) {
     const eventsGeneric = await data[EVENTS_JSON_FILE]();
     if (Array.isArray(eventsGeneric.default)) {
-      console.log(eventsGeneric.default);
       events.push(...eventsGeneric.default);
     }
   }

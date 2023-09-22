@@ -41,10 +41,11 @@ const routes: Route[] = [
         },
       },
       {
-        path: "contact",
-        component: "page-contact",
+        path: "rsvp",
+        component: "page-rsvp",
         action: async () => {
-          await import("./pages/contact");
+          if (!eventData.events.length) await eventData.load();
+          await import("./pages/rsvp");
         },
       },
     ],

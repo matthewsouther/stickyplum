@@ -20,7 +20,7 @@ const processFile = async (file: string) => {
     await fs.readFile(`${EVENTS_DIR}/${file}`, "utf8")
   );
   const html = marked.parse(body);
-  return { ...(attributes as object), html };
+  return { id: file.replace(".md", ""), ...(attributes as object), html };
 };
 
 build();

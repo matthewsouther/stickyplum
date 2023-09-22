@@ -8,9 +8,9 @@ export class Calendar extends LitElement {
   render = () => html`
     <h2>Calendar</h2>
     <p>
-      All concerts are held outside in our yard (or inside if it's over 90°).
-      Cross streets are NE 47th and Going in Portland (RSVP for the exact
-      location).
+      Concerts are held May to September. Usually we gather outside in our yard,
+      but we'll set up inside our air-conditioned house if it's over 90°F. Cross
+      streets are NE 47th and Going in Portland (RSVP for the exact location).
     </p>
     <div>
       ${events.length
@@ -22,9 +22,11 @@ export class Calendar extends LitElement {
             .map(
               (event) =>
                 html`<calendar-event
+                  eventId=${event.id}
                   eventName=${event.title}
                   date=${event.date}
                   html=${event.html}
+                  hasRsvp
                 ></calendar-event>`
             )
         : "No upcoming events"}

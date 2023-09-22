@@ -40,7 +40,7 @@ export class SiteNav extends LitElement {
               >Past Events</a
             ></span
           >
-          <span><a href="/contact" @click="${this.closeMenu}">Contact</a></span>
+          <span><a href="/rsvp" @click="${this.closeMenu}">RSVP</a></span>
         </span>
       </div>
     `;
@@ -50,6 +50,7 @@ export class SiteNav extends LitElement {
     .wrapper {
       display: grid;
       grid-template-columns: auto auto;
+      margin-top: 1em;
     }
 
     h1 {
@@ -66,6 +67,7 @@ export class SiteNav extends LitElement {
     button {
       border: none;
       background-color: transparent;
+      margin-right: 0.5em;
     }
 
     button:hover {
@@ -143,7 +145,7 @@ export class SiteNav extends LitElement {
       /* For desktop */
       .navOptions {
         display: grid;
-        grid-template-columns: repeat(3, 120px);
+        grid-template-columns: repeat(3, 100px);
         grid-column: 2;
         gap: 1em;
       }

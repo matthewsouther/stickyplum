@@ -7,6 +7,11 @@ import "../components/calendarEvent";
 export class PastEvents extends LitElement {
   render = () => html`
     <h2>Past Events</h2>
+    <p>
+      Our very first performer, Jet Black Pearl, suggested the name "Sticky Plum
+      Concerts", and it stuck! We're grateful to these excellent artists and all
+      the good people who came out to see them.
+    </p>
     <div>
       ${events.length
         ? events
@@ -17,6 +22,7 @@ export class PastEvents extends LitElement {
             .map(
               (event) =>
                 html`<calendar-event
+                  eventId=${event.id}
                   eventName=${event.title}
                   date=${event.date}
                   html=${event.html}

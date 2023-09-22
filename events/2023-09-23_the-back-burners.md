@@ -13,5 +13,5 @@ Huddled by the burn and glow of propane heaters, The Back Burners pursued their 
 
 Potluck snacks 4pm  
 Music starts 5pm  
-Suggested donation $20-$25/adult (cash only, 100% goes to the artists)  
+Suggested donation $20-$25/adult (cash or Venmo, 100% goes to the artists)  
 _Kids always free_

@@ -4,9 +4,15 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 @customElement("calendar-event")
 export class CalendarEvent extends LitElement {
+  @property({ type: String }) eventId: string = "";
   @property({ type: String }) eventName: string = "";
   @property({ type: String }) date: string = "";
   @property({ type: String }) html: string = "";
+  @property({ type: Boolean }) hasRsvp: boolean = false;
+
+  handleRsvpClick = () => {
+    window.location.href = `/rsvp?e=${this.eventId}`;
+  };
 
   render = () => html`
     <h3>${this.eventName}</h3>
@@ -23,6 +29,13 @@ export class CalendarEvent extends LitElement {
       })}
     </p>
     <div class="eventBody">${unsafeHTML(this.html)}</div>
+    ${this.hasRsvp
+      ? html`
+          <div>
+            <button @click="${this.handleRsvpClick}">RSVP</button>
+          </div>
+        `
+      : html``}
   `;
 
   static styles = css`
@@ -33,6 +46,18 @@ export class CalendarEvent extends LitElement {
 
     img {
       max-width: 100%;
+    }
+
+    button {
+      margin-top: 1em;
+      padding: 1em;
+      border: 0;
+      border-radius: 0;
+      font-family: var(--header-2-font);
+      font-size: large;
+      color: white;
+      background-color: var(--color-2);
+      cursor: pointer;
     }
   `;
 }

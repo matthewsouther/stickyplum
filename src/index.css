@@ -1,9 +1,14 @@
 :root {
-  --main-background-color: #e9ff33;
-  --color-1: #6c3483;
-  --color-2: #ae0099;
-  --color-3: #c40606;
-  --color-4: #07861c;
+  --main-background-color: linear-gradient(
+    to bottom,
+    rgb(236, 253, 79),
+    rgb(233, 255, 51),
+    rgb(255, 187, 0)
+  );
+  --color-1: rgb(84, 14, 112);
+  --color-2: rgb(129, 60, 121);
+  --color-3: rgb(172, 50, 50);
+  --color-4: rgb(42, 109, 53);
   --header-1-font: "Neucha";
   --header-2-font: "Trebuchet MS";
   --header-3-font: "Arial Black";
@@ -14,25 +19,34 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
+  flex-grow: 1;
+  background-image: var(--main-background-color);
   font-family: var(--main-font);
+  line-height: 1.6;
   font-size: large;
-  background-color: var(--main-background-color);
 }
 
 #siteContainer {
   display: flex;
   flex-wrap: nowrap;
-  margin-top: 1rem;
+  margin: 1rem 0 2rem 0;
 }
 
 #outlet {
   flex: 1 1 750px;
+  max-width: 100%;
 }
 
 #leftMargin,
 #rightMargin {
-  flex: 0 4 5rem;
+  flex: 1 4 0.5rem;
 }
 
 h1 {
