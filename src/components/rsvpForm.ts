@@ -63,13 +63,11 @@ export class RsvpForm extends LitElement {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
+    const headers = { "Content-Type": "application/x-www-form-urlencoded" };
+    const body = new URLSearchParams(formData as any).toString();
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-      alert("Thank you for your submission.");
+      await fetch("/", { method: "POST", headers, body });
+      alert("Thank you for your RSVP!\n" + body);
       form.reset();
     } catch (err) {
       alert(err);
@@ -77,17 +75,8 @@ export class RsvpForm extends LitElement {
   };
 
   renderForm = () => html`
-    <form
-      name="rsvp"
-      method="post"
-      netlify
-      netlify-honeypot="trapTheBots"
-      data-netlify-recaptcha="true"
-      @submit="${this.handleSubmit}"
-    >
+    <form name="rsvp" method="post" netlify @submit="${this.handleSubmit}">
       <input type="hidden" name="form-name" value="rsvp" />
-      <input type="hidden" name="trapTheBots" @input="${this.handleInput}"/>
-      </div>
       <div>
         <label class="block required">Your name</label>
         <input type="text" name="name" required @input="${this.handleInput}" />
@@ -145,20 +134,18 @@ export class RsvpForm extends LitElement {
           @input="${this.handleInput}"
         />
       </div>
-      ${
-        this.data.numberOfKids
-          ? html`
-              <div>
-                <label class="block">Ages of kids</label>
-                <input
-                  type="text"
-                  name="agesOfKids"
-                  @input="${this.handleInput}"
-                />
-              </div>
-            `
-          : html``
-      }
+      ${this.data.numberOfKids
+        ? html`
+            <div>
+              <label class="block">Ages of kids</label>
+              <input
+                type="text"
+                name="agesOfKids"
+                @input="${this.handleInput}"
+              />
+            </div>
+          `
+        : html``}
       <div>
         <label class="block"> How did you hear about us? </label>
         <textarea
