@@ -2,8 +2,9 @@ import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { events } from "../eventData";
 
-class FormData {
+class RsvpFormData {
   [key: string]: any;
+  trapTheBots: string | null = null;
   name: string | null = null;
   email: string | null = null;
   concert: string | null = null;
@@ -31,7 +32,7 @@ export class RsvpForm extends LitElement {
     }));
 
   @property({ type: Object })
-  data = new FormData();
+  data = new RsvpFormData();
 
   connectedCallback(): void {
     super.connectedCallback();
@@ -56,23 +57,22 @@ export class RsvpForm extends LitElement {
       if (target.type === "number") value = parseInt(value);
       this.data = { ...this.data, [name]: value };
     }
-    console.log(this.data);
   };
 
-  handleSubmit = (event: SubmitEvent) => {
+  handleSubmit = async (event: SubmitEvent) => {
     event.preventDefault();
-    const form = this.renderRoot.querySelector("form") as HTMLFormElement;
-    if (form) {
-      const formData = new FormData(form);
-      fetch("/", {
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    try {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-      })
-        .then(() => {
-          window.location.href = `/rsvpComplete`;
-        })
-        .catch((error) => alert(error));
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      alert("Thank you for your submission.");
+      form.reset();
+    } catch (err) {
+      alert(err);
     }
   };
 
@@ -81,13 +81,12 @@ export class RsvpForm extends LitElement {
       name="rsvp"
       method="post"
       netlify
-      netlify-honeypot="trapthebots"
+      netlify-honeypot="trapTheBots"
       data-netlify-recaptcha="true"
+      @submit="${this.handleSubmit}"
     >
       <input type="hidden" name="form-name" value="rsvp" />
-      <div class="hidden">
-        <label>Don't fill this out if you're human</label>
-        <input name="trapthebots" />
+      <input type="hidden" name="trapTheBots" @input="${this.handleInput}"/>
       </div>
       <div>
         <label class="block required">Your name</label>
@@ -146,18 +145,20 @@ export class RsvpForm extends LitElement {
           @input="${this.handleInput}"
         />
       </div>
-      ${this.data.numberOfKids
-        ? html`
-            <div>
-              <label class="block">Ages of kids</label>
-              <input
-                type="text"
-                name="agesOfKids"
-                @input="${this.handleInput}"
-              />
-            </div>
-          `
-        : html``}
+      ${
+        this.data.numberOfKids
+          ? html`
+              <div>
+                <label class="block">Ages of kids</label>
+                <input
+                  type="text"
+                  name="agesOfKids"
+                  @input="${this.handleInput}"
+                />
+              </div>
+            `
+          : html``
+      }
       <div>
         <label class="block"> How did you hear about us? </label>
         <textarea
@@ -171,7 +172,7 @@ export class RsvpForm extends LitElement {
       </div>
       <div data-netlify-recaptcha="true"></div>
       <div>
-        <button type="submit" @submit="${this.handleSubmit}">Submit</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   `;
@@ -209,6 +210,7 @@ export class RsvpForm extends LitElement {
     }
     .hidden {
       display: none;
+      visibility: hidden;
     }
     .block {
       display: block;
