@@ -67,7 +67,7 @@ export class RsvpForm extends LitElement {
     const body = new URLSearchParams(formData as any).toString();
     try {
       await fetch("/", { method: "POST", headers, body });
-      alert("Thank you for your RSVP!\n" + body);
+      alert("Thank you for your RSVP!");
       form.reset();
     } catch (err) {
       alert(err);
