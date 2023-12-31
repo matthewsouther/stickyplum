@@ -145,7 +145,7 @@ export class SiteNav extends LitElement {
       /* For desktop */
       .navOptions {
         display: grid;
-        grid-template-columns: repeat(3, 100px);
+        grid-template-columns: repeat(3, 120px);
         grid-column: 2;
         gap: 1em;
       }

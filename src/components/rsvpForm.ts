@@ -175,7 +175,6 @@ export class RsvpForm extends LitElement {
     return this.eventOptions.length
       ? this.renderForm()
       : this.renderNoUpcomingEvents();
-    // return this.renderNoUpcomingEvents();
   };
 
   static styles = css`

@@ -8,9 +8,8 @@ export class PastEvents extends LitElement {
   render = () => html`
     <h2>Past Events</h2>
     <p>
-      Our very first performer, Jet Black Pearl, suggested the name "Sticky Plum
-      Concerts", and it stuck! We're grateful to these excellent artists and all
-      the good people who came out to see them.
+      We've been honored to host some excellent musical acts! Thanks to the
+      artists and to all the good people who came out to see them.
     </p>
     <div>
       ${events.length
@@ -36,6 +35,14 @@ export class PastEvents extends LitElement {
     h2 {
       font-family: var(--header-2-font);
       color: var(--color-2);
+    }
+
+    a:link {
+      color: var(--color-1);
+    }
+
+    a:visited {
+      color: var(--color-4);
     }
   `;
 }

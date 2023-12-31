@@ -60,5 +60,13 @@ export class CalendarEvent extends LitElement {
       background-color: var(--color-2);
       cursor: pointer;
     }
+
+    a:link {
+      color: var(--color-1);
+    }
+
+    a:visited {
+      color: var(--color-4);
+    }
   `;
 }

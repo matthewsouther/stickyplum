@@ -1,36 +1,18 @@
 import { LitElement, html, css } from "lit";
 import { customElement } from "lit/decorators.js";
-import { events } from "../eventData";
-import "../components/calendarEvent";
+import "../components/calendarListing";
 
 @customElement("page-calendar")
 export class Calendar extends LitElement {
   render = () => html`
     <h2>Calendar</h2>
     <p>
-      Concerts are held May to September. Usually we gather outside in our yard,
-      but we'll set up inside our air-conditioned house if it's over 90°F. Cross
-      streets are NE 47th and Going in Portland (RSVP for the exact location).
+      Concerts are mostly held May to September. Usually we gather outside in
+      our yard, but we'll set up inside our air-conditioned house in case of
+      high heat/rain/etc. Cross streets are NE 47th and Going in Portland (RSVP
+      for the exact location).
     </p>
-    <div>
-      ${events.length
-        ? events
-            .filter((event) => new Date(event.date) > new Date())
-            .sort(
-              (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-            )
-            .map(
-              (event) =>
-                html`<calendar-event
-                  eventId=${event.id}
-                  eventName=${event.title}
-                  date=${event.date}
-                  html=${event.html}
-                  hasRsvp
-                ></calendar-event>`
-            )
-        : "No upcoming events"}
-    </div>
+    <calendar-listing></calendar-listing>
   `;
 
   static styles = css`

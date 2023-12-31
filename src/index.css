@@ -1,14 +1,14 @@
 :root {
   --main-background-color: linear-gradient(
     to bottom,
-    rgb(236, 253, 79),
-    rgb(233, 255, 51),
-    rgb(255, 187, 0)
+    rgb(237, 250, 117),
+    rgb(242, 255, 125),
+    rgb(255, 204, 65)
   );
   --color-1: rgb(84, 14, 112);
   --color-2: rgb(129, 60, 121);
-  --color-3: rgb(172, 50, 50);
-  --color-4: rgb(42, 109, 53);
+  --color-3: rgb(22, 144, 153);
+  --color-4: rgb(48, 134, 62);
   --header-1-font: "Neucha";
   --header-2-font: "Nunito";
   --header-3-font: "Oswald";

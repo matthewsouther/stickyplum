@@ -3,12 +3,14 @@ import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import * as eventData from "./eventData";
 import "./components/siteNav";
+import "./components/siteFooter";
 
 @customElement("lit-site")
 export class Site extends LitElement {
   render = () => html`
     <site-nav></site-nav>
     <slot></slot>
+    <site-footer></site-footer>
   `;
 }
 
