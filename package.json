@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && ts-node --esm ./src/build.ts && vite build",
-    "preview": "ts-node --esm ./src/build.ts && vite preview"
+    "build": "tsc && tsx ./src/build.ts && vite build",
+    "preview": "tsx --esm ./src/build.ts && vite preview"
   },
   "dependencies": {
     "@vaadin/router": "^1.7.5",
@@ -20,6 +20,7 @@
     "marked": "^9.0.3",
     "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
+    "tsx": "^4.7.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
