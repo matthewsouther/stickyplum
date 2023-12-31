@@ -207,3 +207,9 @@ export class SiteFooter extends LitElement {
     }
   `;
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "site-footer": SiteFooter;
+  }
+}
