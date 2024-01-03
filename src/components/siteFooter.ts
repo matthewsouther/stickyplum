@@ -127,7 +127,8 @@ export class SiteFooter extends LitElement {
         </div>
       </div>
       <div class="footnote">
-        Website by Matthew Souther with Lit + TypeScript + Vite.
+        Website by <a href="https://matthewsouther.com">Matthew Souther</a>.
+        Built with Lit + TypeScript + Vite.
         <a href="https://github.com/matthewsouther/stickyplum">
           See GitHub repo
         </a>
