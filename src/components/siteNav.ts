@@ -56,7 +56,16 @@ export class SiteNav extends LitElement {
     h1 {
       font-family: var(--header-1-font);
       font-size: 42px;
-      color: var(--color-1);
+      background: linear-gradient(
+        to right,
+        var(--color-4),
+        var(--color-3),
+        var(--color-2)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* color: linear-gradient(to right, var(--color-1), white); */
       margin: 0;
     }
 

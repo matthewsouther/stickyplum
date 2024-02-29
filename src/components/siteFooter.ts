@@ -24,7 +24,7 @@ export class SiteFooter extends LitElement {
                 target="_blank"
               >
                 <div id="mc_embed_signup_scroll">
-                  <div class="mc-field-group">
+                  <div id="mc_inputs">
                     <label for="mce-FNAME">First Name </label>
                     <input
                       type="text"
@@ -33,8 +33,6 @@ export class SiteFooter extends LitElement {
                       id="mce-FNAME"
                       value=""
                     />
-                  </div>
-                  <div class="mc-field-group">
                     <label for="mce-LNAME">Last Name </label>
                     <input
                       type="text"
@@ -43,8 +41,6 @@ export class SiteFooter extends LitElement {
                       id="mce-LNAME"
                       value=""
                     />
-                  </div>
-                  <div class="mc-field-group">
                     <label for="mce-EMAIL">
                       Email <span class="asterisk">*</span>
                     </label>
@@ -181,6 +177,12 @@ export class SiteFooter extends LitElement {
       grid-template-columns: auto auto;
     }
 
+    input[type="text"],
+    input[type="email"] {
+      margin: 0.5rem;
+      height: 1.5rem;
+    }
+
     input[type="submit"] {
       border: none;
       background-color: var(--color-1);
@@ -192,8 +194,15 @@ export class SiteFooter extends LitElement {
     }
 
     .footnote {
+      color: darkslategrey;
       font-size: smaller;
       margin-top: 1rem;
+    }
+
+    #mc_inputs {
+      display: grid;
+      grid-template-columns: max-content auto;
+      align-items: center;
     }
 
     @media only screen and (min-width: 920px) {
