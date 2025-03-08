@@ -9,7 +9,7 @@ Stumptown Stringband is based in Portland, and they share a passion for traditio
 
 The band brings decades of experience to the stage, and guarantees a fun, engaging and even educational show!
 
-Potluck snacks 5pm  
+Potluck snacks 5:30pm  
 Music starts 6pm  
 Suggested donation $20-$25/adult  
 _Kids always free_  
