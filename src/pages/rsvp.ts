@@ -6,6 +6,11 @@ import "../components/rsvpForm";
 export class RSVP extends LitElement {
   render = () => html`
     <h2>RSVP</h2>
+    <p>
+      Let us know you're coming! We'll make sure there's space, and we'll email
+      you a confirmation with the address within 1-2 days (usually same day on
+      concert days).
+    </p>
     <rsvp-form></rsvp-form>
   `;
 

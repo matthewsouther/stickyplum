@@ -17,7 +17,7 @@ export class Home extends LitElement {
       Named for the small yellow fruit produced by the tree whose shade forms
       our outdoor stage area, these family-friendly concerts are intended to get
       people of all ages out listening to good music. Kids are free to listen or
-      play with parent supervision.
+      play in the yard with parent supervision.
     </p>
     <p>
       We believe kids should be exposed to great music of all kinds; parents
