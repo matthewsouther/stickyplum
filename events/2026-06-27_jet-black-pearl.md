@@ -9,8 +9,11 @@ The untamed and inimitable Jet Black Pearl from the port of Amsterdam spent many
 
 Smartly wacky, her songs in Dutch, English and French are a mad hatter's European party with a funky attitude. With her loop station, she records grooves and layers of flute, vocal percussion and harmonies while squeezing one hot accordion.
 
+For this performance, Jet Black Pearl will be joined by James Powers on trombone. Come join us!
+
 Potluck snacks 5:30pm  
 Music starts 6pm  
 Suggested donation $20-$25/adult  
 _Kids always free_  
 [www.jetblackpearl.com](https://www.jetblackpearl.com)
+[James Powers (Instagram)](https://www.instagram.com/16popsicles/)

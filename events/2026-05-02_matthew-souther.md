@@ -9,6 +9,8 @@ date: 2026-05-02T17:00:00-07:00
 
 Matthew Souther is a songwright, a piano hack, and a swirl of thematic contradictions. Exuberant and plaintive; bombastic and self-deprecating; paying homage to jazz traditions but compulsively irreverant -- his songs are paeans to complexity. Ever fond of folk idioms, willing to chase fool's gold, offering false pretenses, and indulging in anachronism, he offers his tunes with a wink and a nod, then offers a glimpse at something resembling humanity.
 
+This concert will be held indoors in our spacious open plan living room (pianos don't like to go outside).
+
 Potluck snacks 4:30pm  
 Music starts 5pm  
 Suggested donation $20-$25/adult (cash or Venmo, 100% goes to the artists)  
